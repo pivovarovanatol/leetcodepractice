@@ -2,10 +2,13 @@ package com.leetcode.algors.LongestCommonPrefix;
 
 class Solution {
 
-	public String longestCommonPrefix(String[] arr, int n) {
-		int index = findShortestString(arr);
-		
+	public String longestCommonPrefix(String[] arr) {
+		int index = findShortestString(arr) - 1;
+		int n = arr.length;
 		String prefix="";
+		if (n==0) {
+			return "";
+		}
 		
 		int low=0, high=index;
 		while (low <= high) { 
@@ -13,7 +16,7 @@ class Solution {
   
             if (containsAll(arr, n, arr[0], low, mid)) 
             { 
-                prefix = prefix + arr[0].substring(low, mid + 1); 
+                prefix = prefix + arr[0].substring(low, mid+1); 
                 low = mid + 1; 
             }  
             else 
@@ -42,7 +45,7 @@ class Solution {
 		for (int i=0;i<n;i++) {
 			String arr_i = arr[i];
 			
-			for (int j=start;j<end;j++) {
+			for (int j=start;j<=end;j++) {
 				if (arr_i.charAt(j) != str.charAt(j)) {
 					return false;
 				}
