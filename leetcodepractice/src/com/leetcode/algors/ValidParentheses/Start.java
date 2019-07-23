@@ -4,7 +4,7 @@ public class Start {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String str = "{}[]()";
+		String str = "[";
 		
 		Solution sl = new Solution();
 		boolean result = sl.isValid(str);
