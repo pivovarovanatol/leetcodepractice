@@ -12,7 +12,7 @@ public class Start {
 		System.out.println(result);
 		
 		for (int i=0;i<result;i++) {
-			System.out.print(nums[i]);
+			System.out.print(nums[i]+" ");
 		}
 	}
 
