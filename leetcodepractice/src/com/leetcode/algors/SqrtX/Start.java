@@ -10,6 +10,7 @@ public class Start {
 		
 		Solution sl = new Solution();
 		int result = sl.mySqrt(2147483647);
+		//int result = sl.mySqrt(251);
 		System.out.println(result);
 	}
 }

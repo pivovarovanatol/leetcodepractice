@@ -4,20 +4,30 @@ package com.leetcode.algors.SqrtX;
 class Solution {
     public int mySqrt(int x) {
         
-    	int multi = 0;
+    	//long multi = 0;
+    	//long multi2 = 0;
+    	int start=0;
+    	int end = x;
     	
-    	for (int i=0;i<=x;i++) {
-    		multi = i * i;
-    		
-    		if (multi == x) {
-    			return i;
+    	while (true) {
+    		int mid = (start + end)/2;
+    		//multi = (long)mid * (long)mid;
+    		//multi2 = ((long)(mid+1) * (long)(mid+1));
+    		if ((long)mid * (long)mid==x) {
+    			return mid;
+    		}
+    		if (((long)(mid+1) * (long)(mid+1))==x) {
+    			return mid+1;
     		}
     		
-    		if (multi > x) {
-    			return i-1;
+    		if ((long)mid * (long)mid < x) {
+    			if(((long)(mid+1) * (long)(mid+1))>x) {
+    				return mid;
+    			}
+    			start = mid;
+    		} else {
+    			end=mid;
     		}
     	}
-    	
-    	return 0;
     }
 }
