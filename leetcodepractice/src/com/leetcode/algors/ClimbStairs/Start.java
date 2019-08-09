@@ -8,15 +8,18 @@ public class Start {
 		
 		
 		Solution sl = new Solution();
-		int result = sl.climbStairs(8);
+		int result = sl.climbStairs2(44);
+		System.out.println(result);
+		result = sl.climbStairs(44);
 		System.out.println(result);
 	}
 }
 
 /* 
- * 000001
- *   1111
- * 010000
- * 
- * 
- * */
+1
+11
+111
+1111
+11111
+
+*/
