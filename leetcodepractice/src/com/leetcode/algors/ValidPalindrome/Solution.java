@@ -23,7 +23,7 @@ class Solution {
     		}
 
     	}
-    	 
+
     	// Compare from beginning and end to the middle. If not equal -> return false
     	for (int i=0;i<n/2;i++) {
     		

@@ -9,6 +9,7 @@ public class Start {
 		Solution sl = new Solution();
 		boolean result = sl.isPalindrome(str);
 		System.out.println(result);
+		
 	}
 
 }
