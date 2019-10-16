@@ -2,41 +2,46 @@ package com.leetcode.algors.MinStack;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
 class MinStack {
 
-	private Stack<Integer> stack;
-	private List<Integer> sorted;
-	//private int min;
-
+	private Deque<Integer> stack;
+	int min; // = Integer.MAX_VALUE;;
 	
-    /** initialize your data structure here. */
+	/** initialize your data structure here. */
     public MinStack() {
-        Stack<Integer> s = new Stack<Integer>();
-        List<Integer> sr = new ArrayList<Integer>();
-        stack = s;
-        sorted = sr;
+        stack = new LinkedList<Integer>(); 
+        min = Integer.MAX_VALUE;
     }
     
     public void push(int x) {
     	stack.push(x);
-    	sorted.add(x);
+    	if (x < min) {
+    		min = x;
+    	}
     }
     
     public void pop() {
-        int tmp = stack.pop();
-        sorted.remove((Object) tmp);
-        
+        if (min == stack.pop()) {
+        	min = Integer.MAX_VALUE;
+        	for (int t : stack) {
+        		if (t < min) {
+        			this.min = t;
+        		}
+        	}
+        }
     }
     
     public int top() {
         return stack.peek();
+
     }
     
     public int getMin() {
-        Collections.sort(sorted);
-        return sorted.get(0);
+        return min;
     }
 }
