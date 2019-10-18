@@ -17,20 +17,17 @@ public class Start {
 		ListNode l8 = new ListNode(8);
 		ListNode l9 = new ListNode(9);
 		
-		l0.next = l1;
+		l0.next = l9;
+		l9.next = l1;
 		l1.next = l2;
-		l2.next = l3;
-		l3.next = l4;
-		l4.next = l5;
+		l2.next = l4;
 		
-		l6.next = l7;
-		l7.next = l8;
-		l8.next = l9;
-		
-		
+		l3.next = l2;
+
 		
 		Solution sl = new Solution();
-		ListNode result = sl.getIntersectionNode(l0, l6);
+		//ListNode result = sl.getIntersectionNode(l0, l6);
+		ListNode result = sl.getIntersectionNode(l0, l3);
 		
 		System.out.println(result == null ? null : result.val);
 
