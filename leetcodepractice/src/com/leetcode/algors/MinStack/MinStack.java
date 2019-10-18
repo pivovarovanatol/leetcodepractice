@@ -1,5 +1,6 @@
 package com.leetcode.algors.MinStack;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Deque;
@@ -14,7 +15,7 @@ class MinStack {
 	
 	/** initialize your data structure here. */
     public MinStack() {
-        stack = new LinkedList<Integer>(); 
+        stack = new ArrayDeque<Integer>(); 
         min = Integer.MAX_VALUE;
     }
     
