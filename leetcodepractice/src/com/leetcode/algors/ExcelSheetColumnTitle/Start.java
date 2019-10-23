@@ -4,12 +4,13 @@ package com.leetcode.algors.ExcelSheetColumnTitle;
 
 public class Start {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
 		
 		Solution sl = new Solution();
-		String result = sl.convertToTitle(27);
+		//String result = sl.convertToTitle(26*26*26 + 26*26 + 26);
+		String result = sl.convertToTitle(750);
 //		result = sl.convertToTitle(2);
 //		result = sl.convertToTitle(3);
 //		result = sl.convertToTitle(4);
