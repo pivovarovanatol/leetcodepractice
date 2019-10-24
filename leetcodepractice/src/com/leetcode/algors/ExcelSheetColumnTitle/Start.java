@@ -10,15 +10,12 @@ public class Start {
 		
 		Solution sl = new Solution();
 		//String result = sl.convertToTitle(26*26*26 + 26*26 + 26);
-		String result = sl.convertToTitle(750);
-//		result = sl.convertToTitle(2);
-//		result = sl.convertToTitle(3);
-//		result = sl.convertToTitle(4);
-//		result = sl.convertToTitle(5);
-//		result = sl.convertToTitle(6);
-		
-		
+		String result = sl.convertToTitle(18278);
 		System.out.println(result);
+
+		result = sl.convertToTitle2(18278);
+		System.out.println(result);
+
 	}
 }
 
