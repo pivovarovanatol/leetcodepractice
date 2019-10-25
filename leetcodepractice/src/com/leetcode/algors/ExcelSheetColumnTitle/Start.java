@@ -10,11 +10,9 @@ public class Start {
 		
 		Solution sl = new Solution();
 		//String result = sl.convertToTitle(26*26*26 + 26*26 + 26);
-		String result = sl.convertToTitle(18278);
+		String result = sl.convertToTitle(704);
 		System.out.println(result);
 
-		result = sl.convertToTitle2(18278);
-		System.out.println(result);
 
 	}
 }
