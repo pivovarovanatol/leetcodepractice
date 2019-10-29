@@ -1,18 +1,30 @@
 package com.leetcode.algors.RotateArray;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 class Solution {
     public void rotate(int[] nums, int k) {
-        
-        int len = nums.length;
-        int[] modifiedArray = new int[len];
 
-        for (int j=0;j<k;j++){
-            int tmp = nums[len-1];
-            for (int i=len-1;i>0;i--){
-                nums[i] = nums[i-1];
-            }
-            nums[0]=tmp;
+    	if (k==0) return;
+    	
+        int len = nums.length;
+        if (len < 2) return;
+        
+        Deque<Integer> deque = new ArrayDeque<Integer>();
+        for (int i=len-k;i<len;i++){
+            deque.add(nums[i]);
         }
+        
+        for (int i=0;i<len-k;i++){
+            deque.add(nums[i]);
+        }
+        
+        for (int i=0;i<len;i++){
+            nums[i] = deque.remove();
+        }
+
+
         
     }
 }
