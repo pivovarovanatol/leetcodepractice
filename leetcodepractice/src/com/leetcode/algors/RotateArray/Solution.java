@@ -7,9 +7,9 @@ class Solution {
     public void rotate(int[] nums, int k) {
 
     	if (k==0) return;
-    	
         int len = nums.length;
         if (len < 2) return;
+    	k = k % len;
         
         Deque<Integer> deque = new ArrayDeque<Integer>();
         for (int i=len-k;i<len;i++){
