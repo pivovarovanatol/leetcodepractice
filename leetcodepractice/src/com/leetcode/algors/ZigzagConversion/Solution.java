@@ -65,4 +65,35 @@ class Solution {
         
         return result;
     }
+    
+    // Solution in O(n)? (3ms and 38MB)
+    public String convert2(String s, int numRows) {
+        char[] chars = new char[s.length()];
+        int index = 0;
+        int circle = numRows + (numRows > 2 ? numRows - 2 : 0);
+        for (int n = 0, offset = 0; n < numRows; n++, offset++) {
+            for (int i = 0; ; i += circle) {
+                int left = offset == numRows - 1 ? s.length() : i - offset;
+                int right = i + offset;
+                if (left >= s.length() && right >= s.length()) {
+                    break;
+                }
+                if (left == right) {
+                    chars[index++] = s.charAt(right);
+                } else {
+                    if (left > 0 && left < s.length()) {
+                        chars[index++] = s.charAt(left);
+                    }
+                    if (right < s.length()) {
+                        chars[index++] = s.charAt(right);
+                    }
+                }
+            }
+        }
+        return new String(chars);
+    }
+    
+    
+    
+    
 }
