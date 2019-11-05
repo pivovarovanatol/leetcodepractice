@@ -2,7 +2,7 @@ package com.leetcode.algors.ZigzagConversion;
 // https://leetcode.com/problems/zigzag-conversion/
 
 class Solution {
-    public String convert(String s, int numRows) {
+    public String convert2(String s, int numRows) {
         // idea is to create nuRows X s.length char matrix and fill it with symbols. Then go row by row and create an output string
         // Improvement: to create an array of Strings with length of numRows and add character to corresponding array element when we calculate the Y. Save some time to not traverse thru matrix. 
         int len = s.length();
@@ -67,7 +67,7 @@ class Solution {
     }
     
     // Solution in O(n)? (3ms and 38MB)
-    public String convert2(String s, int numRows) {
+    public String convert(String s, int numRows) {
         char[] chars = new char[s.length()];
         int index = 0;
         int circle = numRows + (numRows > 2 ? numRows - 2 : 0);
