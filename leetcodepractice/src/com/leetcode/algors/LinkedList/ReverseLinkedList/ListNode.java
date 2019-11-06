@@ -1,4 +1,4 @@
-package com.leetcode.algors.RemoveLinkedListElements;
+package com.leetcode.algors.LinkedList.ReverseLinkedList;
 //https://leetcode.com/problems/remove-linked-list-elements/
 
 

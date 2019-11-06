@@ -1,4 +1,4 @@
-package com.leetcode.algors.RemoveLinkedListElements;
+package com.leetcode.algors.LinkedList.ReverseLinkedList;
 // https://leetcode.com/problems/remove-linked-list-elements/
 
 import java.io.IOException;
@@ -51,11 +51,11 @@ public class Start {
     public static void main(String[] args) throws IOException {
         // BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
     	
-        String line = "[1,2,6,3,4,5,6]";
+        String line = "[1,2,3,4,5,6]";
             ListNode head = stringToListNode(line);
             int val = 6;
             
-            ListNode ret = new Solution().removeElements(head, val);
+            ListNode ret = new Solution().reverseList(head);
             String out = listNodeToString(ret);
             System.out.print(out);
     }
