@@ -1,8 +1,32 @@
 package com.leetcode.algors.IsomorphicStrings;
 //https://leetcode.com/problems/isomorphic-strings/
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+
 class Solution {
-    public boolean isIsomorphic(String s, String t) {
+	
+    public boolean isIsomorphic(String s1, String s2) {
+        char[] sc1 = s1.toCharArray();
+        char[] sc2 = s2.toCharArray();
+        LinkedHashMap firstStrig = new LinkedHashMap();
+        LinkedHashMap secondString = new LinkedHashMap();
+
+        if(sc1.length == sc2.length){
+            for(int i=0; i<sc1.length; i++){
+                firstStrig.put(sc1[i], i);
+                secondString.put(sc2[i], i);
+            }
+        
+            if(new ArrayList<>( firstStrig.values() ).equals(new ArrayList<>( secondString.values() ))){
+                return true;
+            }
+        }
+        return false;
+    }
+	
+	
+    public boolean isIsomorphic2(String s, String t) {
         
         int len = s.length();
         
