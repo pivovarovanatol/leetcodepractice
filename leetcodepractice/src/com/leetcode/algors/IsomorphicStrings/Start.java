@@ -9,7 +9,7 @@ public class Start {
 		
 		
 		Solution sl = new Solution();
-		boolean result = sl.isIsomorphic("rap", "far");
+		boolean result = sl.isIsomorphic("aaabbccc", "kkkllmmm");
 		System.out.println(result);
 	}
 }
