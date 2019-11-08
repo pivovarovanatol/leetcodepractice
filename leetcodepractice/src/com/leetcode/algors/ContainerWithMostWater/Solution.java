@@ -16,11 +16,17 @@ class Solution {
 
             //max=Math.max(max,(j-i)*min_number);
             max = max > (j-i)*min_number ? max : (j-i)*min_number;
+            if(height[i]==height[j]){
+            	j--;
+            	i++;
+            	continue;
+            }
+
             if(height[i]>height[j]){
                 j--;
-            }else{
+            }else {
                 i++;
-            }
+            } 
         }
         return max;
     }
