@@ -11,5 +11,7 @@ public class Start {
 		int result =sl.generalizedGCD(arr.length, arr);
 		
 		System.out.println(result);
+		
+		
 	}
 }
