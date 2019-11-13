@@ -8,7 +8,9 @@ public class Start {
 		
 
 		Solution sl = new Solution();
-		int result = sl.firstBadVersion(2929);
+		sl.badVersion = 100;
+		sl.count = 0;
+		int result = sl.firstBadVersion(250000);
 
 		System.out.println(result);
 	}

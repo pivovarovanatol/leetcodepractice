@@ -5,17 +5,21 @@ package com.leetcode.algors.FirstBadVersion;
 /* The isBadVersion API is defined in the parent class VersionControl.
       boolean isBadVersion(int version); */
 
-public class Solution extends VersionControl{
+public class Solution{
     
-    
+    int badVersion;
+    int count;
     // Iterative solution - 10ms (<99%) 32.9MB(<100%)
     public int firstBadVersion(int n) {
-        return helper(1, n);
+        int bad = helper(1, n);
+        System.out.println(count);
+        return bad;
 
     }
     private int helper(int lo, int hi){
         while(lo < hi){
             int md = lo+(hi-lo)/2;
+            //System.out.println("Low: " + lo + " High: " + hi + " Mid: " + md + " Is Bad Version? " + isBadVersion(md));
             if(isBadVersion(md)){
                 hi = md;
             }else{
@@ -44,6 +48,10 @@ public class Solution extends VersionControl{
 			return isBadVersion(lo) ? lo : lo+1;
 		}
 	}
-    
+
+	boolean isBadVersion(int n){
+		count++;
+		return (n >= this.badVersion);
+	}
 }
 
