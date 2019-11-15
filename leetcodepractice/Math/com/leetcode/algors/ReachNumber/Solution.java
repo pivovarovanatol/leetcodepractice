@@ -3,7 +3,23 @@ package com.leetcode.algors.ReachNumber;
 
 
 class Solution {
+	
+	
+	// Solution from discussion -> to compare
     public int reachNumber(int target) {
+        //target = Math.abs(target);
+        
+        target = target > 0 ? target : 0-target;
+        
+        int sum = 0;
+        int k = 0;
+        while(sum < target || (sum - target) % 2 != 0){
+            sum += ++k;
+        }
+        return k;
+    }    
+	
+    public int reachNumber2(int target) {
 
         int steps = 0;
         int currPos = 0;
