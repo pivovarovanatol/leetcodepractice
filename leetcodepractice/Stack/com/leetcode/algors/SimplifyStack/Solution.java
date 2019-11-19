@@ -5,9 +5,81 @@ import java.util.Deque;
 
 class Solution {
 	
+    public String simplifyPath(String path) {
+        
+        String tmp="";
+
+        int n = path.length();
+        char[] arr = path.toCharArray();
+
+        Deque<String> stack = new ArrayDeque<String>();
+        tmp = "";
+        
+        // 1. Put everyting in the stack: 
+        // Execute once for every character in the String -> O(n)
+        for (int i=1;i<n;i++){
+        	char ch = arr[i]; 
+        	if (ch == '/') {
+                //System.out.println(" Symbol is " + tmp);
+            	if (tmp.length() > 0) {
+            		if (tmp.equals(".")) {
+                    // do nothing
+                    } else if (tmp.equals("..") ) {
+                    	if (stack.size() > 0) {
+                    		stack.pop();
+                    	} 
+                    } else {
+                    	stack.push(tmp);	
+                    }
+            	}
+                tmp = "";                    
+            } else {
+                tmp = tmp + arr[i];
+            	if (tmp.length() > 0 && i == n-1) {
+            		if (tmp.equals(".")) {
+                    // do nothing
+                    } else if (tmp.equals("..")  && stack.size() > 0) {
+                    	stack.pop();
+                    } else {
+                    	stack.push(tmp);	
+                    }
+            	}
+            }
+        }
+        
+        
+        // 2. Construct path from the stack
+        // Execute once for word in the stack -> O(n) worse case
+        tmp="";
+        path = "";
+        while (stack.size()>0){
+            tmp = stack.pop();
+           	path = "/" + tmp + path;	
+                         
+        }    
+        //path = path + "/";
+                
+        
+        path = path.length() > 0 ? path.trim() : "/";
+        
+        return path;
+    }
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	// solved with Queue + Stack in 5 steps - too slow, need to optimize. 14ms (<6.5%) 37.6MB(<87%)
-    public String simplifyPath(String path) {
+    public String simplifyPath2(String path) {
         
         // 1. remove multiple '/' - keep just one
         String tmp="";
