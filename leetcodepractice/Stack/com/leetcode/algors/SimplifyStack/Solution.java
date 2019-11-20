@@ -5,6 +5,8 @@ import java.util.Deque;
 
 class Solution {
 	
+	
+	// Solved with 1 stack. 4ms(<90%) 36.5MB(<100%)
     public String simplifyPath(String path) {
         
         String tmp="";
@@ -54,7 +56,10 @@ class Solution {
         path = "";
         while (stack.size()>0){
             tmp = stack.pop();
-           	path = "/" + tmp + path;	
+            if (!tmp.equals("..")) {
+            	path = "/" + tmp + path;
+            }
+           		
                          
         }    
         //path = path + "/";
