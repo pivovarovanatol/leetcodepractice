@@ -1,8 +1,8 @@
-package com.leetcode.algors.Permutations;
+package com.leetcode.algors.Permutations2;
 
 import java.util.List;
 
-// https://leetcode.com/problems/permutations/
+// https://leetcode.com/problems/permutations-ii/
 
 
 public class Start {
@@ -12,7 +12,7 @@ public class Start {
 		
 		int[] arr = {1,1,2};
 		Solution sl = new Solution();
-		List<List<Integer>> result = sl.permute(arr);
+		List<List<Integer>> result = sl.permuteUnique(arr);
 		System.out.println(result);
 	}
 }

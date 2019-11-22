@@ -11,9 +11,9 @@ class Solution {
         int n= nums.length;
         
         // Try to solve it with recursion
-        // permuteHelper(nums, n, result);
+        permuteHelper(nums, n, result);
         
-        permuteHelperIterative(nums, n, result);
+        //permuteHelperIterative(nums, n, result);
         
         
         return result;
