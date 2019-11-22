@@ -15,8 +15,24 @@ import java.util.List;
  */
 class Solution {
 	
+	// From discussions - 0ms(<100%) 34.6MB(<100%)
+	int min = Integer.MAX_VALUE;
+	Integer prev = null;
+
+	public int minDiffInBST(TreeNode root) {
+		if(root==null) return -1;
+		minDiffInBST(root.left);
+		if (prev!=null)
+			min = Math.min(min, root.val - prev);
+		prev = root.val;
+		minDiffInBST(root.right);
+
+		return min; 
+	}
+	
+	
 	// solved with in-order traversal and scan of the array. 1ms(<32%) 34.4MB(<100%)
-    public int minDiffInBST(TreeNode root) {
+    public int minDiffInBST2(TreeNode root) {
         int minDiff = Integer.MAX_VALUE;
         List<Integer> list = new ArrayList<>(); 
 
