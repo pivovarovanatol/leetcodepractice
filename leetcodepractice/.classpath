@@ -14,5 +14,7 @@
 	<classpathentry kind="src" path="DynamicProgramming"/>
 	<classpathentry kind="src" path="BinarySearch"/>
 	<classpathentry kind="src" path="Backtracking"/>
+	<classpathentry kind="src" path="DFS"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_231"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
