@@ -15,6 +15,7 @@
 	<classpathentry kind="src" path="BinarySearch"/>
 	<classpathentry kind="src" path="Backtracking"/>
 	<classpathentry kind="src" path="DFS"/>
+	<classpathentry kind="src" path="Heap"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
