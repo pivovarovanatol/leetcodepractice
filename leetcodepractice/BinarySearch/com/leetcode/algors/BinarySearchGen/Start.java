@@ -15,7 +15,7 @@ public class Start {
 		System.out.println("Closest value = " + closestValue);
 	}
 	
-	
+	// Iterative Binary Search to get closest
 	public static int getClosestK(int[] a, int x) {
 
 	    int low = 0;
@@ -39,5 +39,30 @@ public class Start {
 	    }
 	    return a[high];
 	}	
+	
+	
+	// Iterative binary search to get exact or -1if not found 
+    int binarySearch(int[] arr, int start, int end, int x) {
+
+		while (start <= end) {
+			
+			int middle = (start + end) / 2;
+			
+			if (x < arr[middle]) {
+				end = middle - 1;
+			}
+
+			if (x > arr[middle]) {
+				start = middle + 1;
+			}
+			
+			if (x == arr[middle]) {
+				return middle;
+			}
+		}
+		return -1;
+		
+    }
+
 
 }

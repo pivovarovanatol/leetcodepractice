@@ -8,7 +8,47 @@ import java.util.TreeMap;
 
 class Solution {
 	
+	// From discussions (I had the same thoughts). Calc sum for both arrays and find the average. For every element in A search in array B to find a + diffA = b.  11ms(<95%) 40.6MB(<96%) With my Binarysearch -> same performance 
     public int[] fairCandySwap(int[] A, int[] B) {
+        int sumA = 0;
+        int sumB = 0;
+        for(int a : A) {
+            sumA+=a;
+        }
+        
+        for(int b : B) {
+            sumB+=b;
+        }
+        
+//        int pointer = 0;
+//        
+//        while (pointer < A.length || pointer < B.length) {
+//        	if (pointer < A.length)
+//                sumA+=A[pointer];
+//        		
+//        	if (pointer < B.length)
+//                sumB+=B[pointer];
+//        	pointer++;
+//        }
+        
+        int avg = (sumA+sumB)/2;
+        int targetA = avg-sumA;
+        
+        Arrays.sort(B);
+        
+        for(int a:A){
+        	
+            if(binarySearch(B, 0, B.length-1, a+targetA))
+                return new int[]{a,a+targetA};
+        }
+        
+        return null;
+    }
+	
+	
+	
+	// Some solution. Not all test cases pass
+    public int[] fairCandySwap3(int[] A, int[] B) {
         
         Arrays.sort(A);
         Arrays.sort(B);
@@ -114,5 +154,29 @@ class Solution {
         
         return res;
     }
+    
+    boolean binarySearch(int[] arr, int start, int end, int x) {
+
+		while (start <= end) {
+			
+			int middle = (start + end) / 2;
+			
+			if (x < arr[middle]) {
+				end = middle - 1;
+			}
+
+			if (x > arr[middle]) {
+				start = middle + 1;
+			}
+			
+			if (x == arr[middle]) {
+				return true;
+			}
+		}
+		return false;
+		
+    }
+    
 }
+
 
