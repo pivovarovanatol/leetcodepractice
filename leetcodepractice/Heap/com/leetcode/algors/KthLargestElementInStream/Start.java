@@ -8,7 +8,7 @@ public class Start {
 		// TODO Auto-generated method stub
 		
 		int k = 3;
-		int[] arr = {4,5,8,2};
+		int[] arr = {};
 		KthLargest kthLargest = new KthLargest(3, arr);
 	
 		System.out.println(kthLargest.add(3));   // returns 4
