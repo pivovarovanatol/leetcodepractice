@@ -4,7 +4,7 @@ package com.leetcode.algors.FirstUniqueCharacterInString;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class GroupAnagramsTest {
+public class FirstUniqueChar {
 
 	@Test
 	public void firstUniqueCharCase1() {
