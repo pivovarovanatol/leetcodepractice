@@ -1,11 +1,8 @@
 package com.leetcode.algors.IntegerToOct;
 
-import java.util.*;
-
 public class Start {
 
 	public static void main(String[] args) {
-		
 		int n=10000;
 		System.out.println(Integer.toBinaryString(n));
 		System.out.println(Integer.toOctalString(n));
@@ -24,11 +21,9 @@ public class Start {
 			//System.out.println(Integer.toBinaryString(n));
 		}
 		System.out.println(res);
-		
 	}
 	
 	static int binaryToInt(String s) {
-		
 		int res=0;
 		char[] arr = s.toCharArray();
 		
@@ -36,7 +31,6 @@ public class Start {
 			if (arr[i]=='1') {
 				res = res + (int) Math.pow(2, s.length()-i-1);
 			}
-			
 		}
 		
 		return res;
