@@ -1,29 +1,10 @@
 package com.leetcode.algors.BitManipulationGeneral;
 
-import java.util.*;
 
 public class Start {
 
 	public static void main(String[] args) {
 		
-		int n=10000;
-		System.out.println(Integer.toBinaryString(n));
-		System.out.println(Integer.toOctalString(n));
-		
-		String res = "";
-		
-		while (n >0) {
-			String tmp = Integer.toBinaryString(n);
-			if (tmp.length() > 3) {
-				tmp = tmp.substring(tmp.length()-3, tmp.length());
-			}
-			int a = binaryToInt(tmp);
-			System.out.println("Part is: " + tmp + " converted to " + a);
-			res = a+res;
-			n = n >> 3;
-			//System.out.println(Integer.toBinaryString(n));
-		}
-		System.out.println(res);
 		
 	}
 	
