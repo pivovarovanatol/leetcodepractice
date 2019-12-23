@@ -13,9 +13,7 @@ public class DegreeOfAnArrayTest {
 		Solution sl = new Solution();
 
 		// when
-		int result = sl.findShortestSubArray(arr);		
-
-		// then
+		int result = sl.findShortestSubArray(arr);
 		int expected = 1;
 		Assert.assertEquals(expected, result);
 	}
