@@ -2,7 +2,9 @@ package com.leetcode.algors.PowerOfFour;
 //https://leetcode.com/problems/power-of-four/
 
 class Solution {
-    public boolean isPowerOfFour(int num) {
+	
+	// Solved with shift and XOR
+    public boolean isPowerOfFour2(int num) {
         boolean isPower = false;
         int i = 0;
         while (i < 32){
@@ -21,6 +23,15 @@ class Solution {
         } 
         
         return isPower;
+    }
+    
+    
+    // Solved with 2 logarithms (Mariya's idea). 1ms(<100%) 33.7MB(<6.67%)
+    public boolean isPowerOfFour(int num) {
+    	float n = (float) (Math.log(num) / Math.log(4));
+    	int x = (int) n;
+    	System.out.println(n + " | " + x);
+    	return (x == n);
     }
 }
 
