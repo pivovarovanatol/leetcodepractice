@@ -16,6 +16,7 @@
 	<classpathentry kind="src" path="Backtracking"/>
 	<classpathentry kind="src" path="DFS"/>
 	<classpathentry kind="src" path="Heap"/>
+	<classpathentry kind="src" path="Graph"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

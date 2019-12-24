@@ -1,4 +1,4 @@
-package com.leetcode.algors.BalancedBinaryTree;
+package com.leetcode.algors.FindTheTownJudge;
 
 /**
  * Definition for a binary tree node.
