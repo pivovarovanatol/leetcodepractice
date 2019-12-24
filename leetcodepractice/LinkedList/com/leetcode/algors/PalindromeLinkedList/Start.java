@@ -5,7 +5,7 @@ public class Start {
     
     public static void main(String[] args) {
         
-    	int[] arr = {0,1,2,3,2,1,0};
+    	int[] arr = {1,2,3,4,3,2,1};
     	ListNode head = new ListNode(arr[0]);
     	ListNode curr = head;
     	
@@ -14,6 +14,8 @@ public class Start {
     		curr.next = tmp;
     		curr = tmp;
     	}
+    	
+    	//ListNode tmp = new Solution().reverse(head);
     	
         boolean result = new Solution().isPalindrome(head);
         
