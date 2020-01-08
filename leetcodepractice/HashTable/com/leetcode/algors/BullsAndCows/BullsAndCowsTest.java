@@ -5,7 +5,7 @@ package com.leetcode.algors.BullsAndCows;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class GroupAnagramsTest {
+public class BullsAndCowsTest {
 
 	@Test
 	public void getHintCase1() {
