@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 class Solution {
 	
-	// From discussions. 0ms(<100%) 41.5MB(<5%)
+	// From discussions. Solved with recursion and in place. 0ms(<100%) 41.5MB(<5%)
     public void flatten(TreeNode root) {
         helper(root);
      }
