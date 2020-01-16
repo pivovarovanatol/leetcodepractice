@@ -7,7 +7,7 @@ import java.util.Deque;
 import java.util.List;
 class Solution {
     List<Integer> list;
-    
+    //solved with DFS and iteratively. 0ms(<100%) 41MB(<6%)
     public List<Integer> preorderTraversal(TreeNode root) {
         list = new ArrayList<>();
         if (root==null){
@@ -28,7 +28,7 @@ class Solution {
         return list;        
     }
     
-    
+    //solved with DFS and iteratively. 0ms(<100%) 41MB(<6%)
     public List<Integer> preorderTraversal2(TreeNode root) {
         list = new ArrayList<>();
         if (root==null){
