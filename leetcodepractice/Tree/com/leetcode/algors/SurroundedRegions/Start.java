@@ -13,8 +13,8 @@ public class Start {
 							{'X','X','O','X','O','X'},
 							{'X','X','X','X','X','X'}}; */
 
-		char[][] board =   {{'X','X','X','X'},
-							{'X','O','O','O'},
+		char[][] board =   {{'O','X','X','X'},
+							{'X','O','O','X'},
 							{'X','O','X','O'},
 							{'X','X','X','X'}}; 
 

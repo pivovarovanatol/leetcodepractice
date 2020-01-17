@@ -5,7 +5,65 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 class Solution {
+	
+	// solved with DFS. 1ms(<100%) 45MB(46%)
     public void solve(char[][] board) {
+    	// go over boundaries and for every 'O' perform DFS keeping track of how far it spreads 
+    	// mark that in the boolean matrix. After go and assign the O for corresponding cells in the original board, or put X, since it's not connected to boundaries Os.
+    	
+        int height = board.length;
+        if (height==0) {
+        	return;
+        }
+        int width = board[0].length;
+        boolean[][] marked = new boolean[height][width];
+        boolean[][] visited = new boolean[height][width];
+        
+        for (int i=0;i<height;i++) {
+        	mark(board, visited, i, 0, height, width, marked);
+        	mark(board, visited, i, width-1, height, width, marked);
+        }
+        
+        for (int i=0;i<width;i++) {
+        	mark(board, visited, 0, i, height, width, marked);
+        	mark(board, visited, height-1, i, height, width, marked);
+        }
+        
+        for (int i=1;i<height-1;i++){
+            for (int j=1;j<width-1;j++){
+                if (marked[i][j]){
+                   	board[i][j]='O';
+                } else {
+                	board[i][j]='X';
+                }
+            }
+        }
+
+    }
+
+	void mark(char[][] board, boolean[][] visited, int i, int j, int height, int width, boolean[][] marked) {
+		if (i<0 || i>= height || j<0 || j >= width) {
+			return;
+		}
+		if (visited[i][j]) {
+			return;
+		}
+		visited[i][j] = true;
+		if (board[i][j]=='X') {
+			return;
+		} else {
+			marked[i][j]=true;
+			mark(board, visited, i-1, j, height, width, marked);
+			mark(board, visited, i+1, j, height, width, marked);
+			mark(board, visited, i, j-1, height, width, marked);
+			mark(board, visited, i, j+1, height, width, marked);
+		}
+		
+	}
+	
+	
+	
+    public void solve1(char[][] board) {
         // idea: traverse thru matrix keeping track of visited cells. Check only visited.
         // For every cell == O -> do DFS/BFS and check if children are surrounded by X. If yes - convert the current cell to X, otherwise keep O.
     	// need to utilize BFS
