@@ -14,13 +14,15 @@ class Solution {
     	// Otherwise - add unvisited nodes to the queue and repeat. 
     	// If queue is empty - return true (meaning region is surrounded). Then do second pass to convert to X.
     	
+    	// another idea - create another board filled with X, then start from boundaries on first board 
+    	// and copy O and connected Os to a new board?
     	
         int height = board.length;
         if (height==0) {
         	return;
         }
         int width = board[0].length;
-        boolean[][] visited = new boolean[height][width];
+        //boolean[][] visited = new boolean[height][width];
         // check: 0 - not checked. -1 - in the process. 1 - checked.
 
        // for (int i=0;i<height;i++) {
@@ -31,8 +33,9 @@ class Solution {
         for (int i=1;i<height-1;i++){
             for (int j=1;j<width-1;j++){
                 if (board[i][j]=='O'){
+                	boolean[][] visited = new boolean[height][width];
                     boolean surrounded = bfs(board, visited, i, j, height, width);
-                    clearMatrix(visited);
+                    //clearMatrix(visited);
                     if (surrounded) {
                     	board[i][j]='X';
                     }
