@@ -14,8 +14,8 @@ public class Start {
 							{'X','X','X','X','X','X'}}; */
 
 		char[][] board =   {{'X','X','X','X'},
-							{'X','O','X','X'},
-							{'X','O','X','X'},
+							{'X','O','O','O'},
+							{'X','O','X','O'},
 							{'X','X','X','X'}}; 
 
 		Solution sl = new Solution();
