@@ -13,8 +13,16 @@ class Solution {
         // Create a graph of Strings. Strings are connected when they have one letter difference.
         // then find the shortest path from beginWord to endWord using BFS
         // Create a graph as Adjacency List
-    	wordList.add(beginWord);
-        HashMap<String, List<String>> graph = new HashMap<>();
+    	boolean containsBeginWord = false;
+    	for (String str : wordList) {
+    		if (str.equals(beginWord))  {
+    			containsBeginWord = true;
+    			break;
+    		}
+    	}
+    	if (!containsBeginWord) wordList.add(beginWord);
+    	
+    	HashMap<String, List<String>> graph = new HashMap<>();
         HashMap<String,Boolean> connected = new HashMap<>();
         for (String word1 : wordList){
             ArrayList<String> list = new ArrayList<>();
@@ -26,20 +34,44 @@ class Solution {
             graph.put(word1, list);
         }
         // Look for shortest path
-        int distance = bfs(graph, beginWord, endWord);
-        return distance;
+        Set<String> visited = new HashSet<>();
+        
+        //int dis = bfs(graph, beginWord, endWord);
+        //System.out.println(dis);
+        
+        int distance = dfs(graph, beginWord, endWord, visited);
+        return distance == Integer.MAX_VALUE ? -1 : distance+1;
     }
     
     
-    int dfs(HashMap<String, List<String>> graph, String beginWord, String endWord) {
+    int dfs(HashMap<String, List<String>> graph, String beginWord, String endWord, Set<String> visited) {
     	if (beginWord.equals(endWord)) {
     		return 0;
     	}
+    	//visited.add(beginWord);
     	List<String> children = graph.get(beginWord);
+    	if (children==null) {
+    		return Integer.MAX_VALUE;
+    	}
     	
+    	int min = Integer.MAX_VALUE;
     	
+    	for (String child : children) {
+    		if (!visited.contains(child)) {
+    			visited.add(child);
+        		int dist = dfs(graph, child, endWord, visited);
+        		//visited.remove(child);
+        		if (dist != Integer.MAX_VALUE) {
+        			if (dist==0) {
+        				return 1;
+        			} else {
+        				min = 1 + Math.min(min, dist);
+        			}
+        		}
+    		}
+    	}
     	
-    	return 0;
+    	return min;
     }
     
 
