@@ -8,8 +8,67 @@ import java.util.List;
 import java.util.Set;
 
 class Solution {
+	
+	// From discussions: 13ms(<97%) 46.9MB(<7%)
+	public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+        Set<String> dict = new HashSet<>();
+        dict.addAll(wordList);
+        if (!wordList.contains(endWord)) {
+            return 0;
+        }
+
+        Set<String> set1 = new HashSet<>();
+        Set<String> set2 = new HashSet<>();
+
+        set1.add(beginWord);
+        set2.add(endWord);
+        Set<String> visited = new HashSet<>();
+
+        return helper(dict, set1, set2, visited, 1);
+    }
+
+    private int helper(Set<String> dict, Set<String> set1, Set<String> set2, Set<String> visited, int level) {
+        if (set1.isEmpty()) return 0;
+
+        if (set1.size() > set2.size()) return helper(dict, set2, set1, visited, level);
+
+        // remove words from both ends
+        visited.addAll(set1);
+        visited.addAll(set2);
+
+        // the set for next level
+        Set<String> set = new HashSet<>();
+
+        // for each string in the current level
+        for (String str : set1) {
+            for (int i = 0; i < str.length(); ++i) {
+                // change letter at every position
+                char[] chars = str.toCharArray();
+                for (char ch = 'a'; ch <= 'z'; ch++) {
+                    chars[i] = ch;
+                    String word = new String(chars);
+
+                    // found the word in other end(set)
+                    if (set2.contains(word)) {
+                        return level + 1;
+                    }
+
+                    // if not, add to the next level
+                    if (!visited.contains(word) && dict.contains(word)) {
+                        System.out.println("Valid jump word: " + word);
+                        set.add(word);
+                        visited.add(word);
+                    }
+                }
+            }
+        }
+
+        return helper(dict, set2, set, visited, level + 1);
+    }
+	
+	
 	// solved with BFS, but too slow. 978ms(<5%) 52MB(<5%) 
-    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+    public int ladderLength2(String beginWord, String endWord, List<String> wordList) {
         // Create a graph of Strings. Strings are connected when they have one letter difference.
         // then find the shortest path from beginWord to endWord using BFS
         // Create a graph as Adjacency List
