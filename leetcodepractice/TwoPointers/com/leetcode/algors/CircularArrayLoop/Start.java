@@ -8,10 +8,10 @@ public class Start {
 		
 //		int[] nums = {-2,1,-1,-2,-2}; // false
 //		int[] nums = {-1,-2,-3,-4,-5}; // false
-//		int[] nums = {2,-1,1,2,2}; // true
+		int[] nums = {2,-1,1,2,2}; // true
 //		int[] nums = {-1,2}; // false
 //		int[] nums = {3,1,2}; // false
-		int[] nums = {-2,-3,-9}; // false
+//		int[] nums = {-2,-3,-9}; // false
 		
 		Solution sl = new Solution();
 		

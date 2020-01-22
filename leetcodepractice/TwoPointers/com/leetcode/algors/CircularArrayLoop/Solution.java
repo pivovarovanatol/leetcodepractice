@@ -5,7 +5,7 @@ class Solution {
 	// from discussions. Same idea, different implementation, changes array(!). 0ms (<100%) 40MB(<11%)
     public boolean circularArrayLoop(int[] nums) {
         for(int i = 0; i < nums.length; ++i){
-            int cur = i, count = 0, dir = 0, prev = i; 
+            int cur = i, dir = 0, prev = i; 
             while(nums[cur] <= 1000){  
                 prev = cur; 
                 int t = (cur + nums[cur])%nums.length;
