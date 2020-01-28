@@ -9,7 +9,7 @@ class Solution {
 	// 1ms(<70%) 36MB(<100%)
     public int nthUglyNumber(int n, int a, int b, int c) {
         int low = 1, high = Integer.MAX_VALUE, mid;
-
+        high = 100;
         while (low < high) {
             mid = low + (high - low) / 2;
 
@@ -18,9 +18,11 @@ class Solution {
             else
                 high = mid;
         }
-
+        
         return high;
     }
+    
+    // greatest common divisor
     public long gcd(long a, long b) {
         if (a == 0)
             return b;
@@ -28,6 +30,7 @@ class Solution {
         return gcd(b % a, a);
     }
 
+    // lowest common multiplier
     public long lcm(long a, long b) {
         return (a * b) / gcd(a, b);
     }

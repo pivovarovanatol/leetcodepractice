@@ -53,9 +53,14 @@ public class Start {
     	int b=6;
     	int c=8;
     	int expected= 28;
-
-    	int actual = new Solution().nthUglyNumber(n, a, b, c);
-        System.out.print(actual + " = " + expected);
+    	
+    	Solution sl = new Solution();
+    	int actual = sl.nthUglyNumber(n, a, b, c);
+        System.out.println(actual + " = " + expected);
+        
+        System.out.println("LCM of 8 and 12 = " + sl.lcm(8, 12));
+        
+        System.out.println("GCD of 8 and 12 = " + sl.gcd(8, 12));
         
     }
 
