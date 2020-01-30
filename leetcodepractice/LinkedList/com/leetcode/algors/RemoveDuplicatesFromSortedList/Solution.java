@@ -1,12 +1,9 @@
 package com.leetcode.algors.RemoveDuplicatesFromSortedList;
-
-
 // https://leetcode.com/problems/remove-duplicates-from-sorted-list/
 
 
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
-        
     	ListNode current = head;
     	if (head == null) {
     		return head;
@@ -21,12 +18,8 @@ class Solution {
     		} else {
     			current = current.next;
     		}
-    		
     	}
-    	
     	return head;
     }
-
-        
 }
 
