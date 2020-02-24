@@ -6,8 +6,8 @@ class Solution implements Runnable{
 	int number;
 	
 	@Override
-//	public synchronized void run() {
-	public void run() {
+	public synchronized void run() {
+//	public void run() {
 		// TODO Auto-generated method stub
 		
 		Thread currentThread = Thread.currentThread();

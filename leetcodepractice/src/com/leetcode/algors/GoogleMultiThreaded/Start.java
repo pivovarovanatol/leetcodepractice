@@ -11,9 +11,9 @@ public class Start {
 		System.out.println("=========================== Started: ");
 		long startTime = System.currentTimeMillis();
 		Stack<Thread> stack = new Stack<>(); 
-		Solution sl = new Solution();
 		
 		for (int i=0;i<n;i++) {
+			Solution sl = new Solution();
 			Thread t = new Thread(sl);
 			stack.push(t);
 			t.start();
