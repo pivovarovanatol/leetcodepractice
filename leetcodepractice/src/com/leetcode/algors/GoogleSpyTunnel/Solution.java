@@ -1,11 +1,9 @@
 package com.leetcode.algors.GoogleSpyTunnel;
 
-
 class Solution {
-	
 	public boolean canPass(int[] coordinatesX, int[] coordinatesY, int[] radiuses, int bottom, int top) {
-		// Generate graph from vertices by checking if two mines overlap.
-		// While generating - keep track of the lowest and highest boundaries. 
+		// Iterate over vertices by checking if two mines overlap.
+		// While iterating - keep track of the lowest and highest boundaries. 
 		// If completely blocks tunnel -> return false
 		// Otherwise -> return true; 
 		
@@ -53,5 +51,4 @@ class Solution {
 		
 		return true;
 	}
-	
 }
