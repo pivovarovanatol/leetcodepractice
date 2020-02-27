@@ -1,10 +1,8 @@
 package com.leetcode.algors.BestTimeToBuyAndSellStock;
+// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/submissions/
 
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
-
-// https://leetcode.com/problems/path-sum/submissions/
 
 public class Start {
 

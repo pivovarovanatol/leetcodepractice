@@ -1,5 +1,5 @@
 package com.leetcode.algors.BestTimeToBuyAndSellStock;
-// https://leetcode.com/problems/path-sum/submissions/
+// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/submissions/
 
 class Solution {
     public int maxProfit(int[] prices) {
