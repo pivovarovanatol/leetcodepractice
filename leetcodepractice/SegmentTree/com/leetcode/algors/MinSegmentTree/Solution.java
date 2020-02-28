@@ -1,15 +1,5 @@
 package com.leetcode.algors.MinSegmentTree;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map.Entry;
-import java.util.Set;
-import java.util.TreeMap;
-
-// https://leetcode.com/problems/count-of-range-sum/
+// https://leetcode.com/problems/sum-of-subarray-minimums/
 
 
 class Solution {
@@ -28,62 +18,57 @@ class Solution {
 		}
 		// query the tree within the range and return results
 		
-		buidMinSegmentTree(arr, 0, n-1, 0);
+		buidMinSegmentTree(arr, n);
 		
 		for (int i : sg) {
 			System.out.print(i + " ");
 		}
 		System.out.println();
 		
-		
+		min = range_query(sg, lo, hi, n);
 		
 		return min;
 	} 
     
-	private int querySegmentTree(int start, int end, int lo, int hi, int index) {
-	        // If segment of this node is a part of given range, then return 
-	        // the sum of the segment 
-	        if (lo <= start && hi >= end) 
-	            return sg[end]; 
-	  
-	        // If segment of this node is outside the given range 
-	        if (end < lo || start > hi) 
-	            return Integer.MAX_VALUE; 
-	  
-	        // If a part of this segment overlaps with the given range 
-	        int mid = getMid(start, end); 
-	        return Math.min(querySegmentTree(start, mid, lo, hi, 2 * index + 1), 
-	        		querySegmentTree(mid + 1, end, lo, hi, 2 * index + 2)); 
-		
-	}
-
-	int getArraySize(int n) {
-		int multi = 1;
-		while (multi < n) {
-			multi *=2;
+    static int range_query(int[] segtree, int left, int right, int n) {
+        // change the index to leaf node first 
+        left += n; 
+        right += n; 
+  
+        // initialize minimum to a very high value 
+        int mi = (int) 1e9; 
+  
+        while (left < right)  
+        { 
+            // if left index in odd 
+            if ((left & 1) == 1) 
+            { 
+                mi = Math.min(mi, segtree[left]); 
+                // make left index even 
+                left++; 
+            } 
+            // if right index in odd 
+            if ((right & 1) == 1)  
+            { 
+                // make right index even 
+                right--; 
+                mi = Math.min(mi, segtree[right]); 
+            } 
+            // move to the next higher level 
+            left /= 2; 
+            right /= 2; 
+        } 
+        return mi; 
+    } 
+	
+	void buidMinSegmentTree(int[] arr, int n) {
+		for (int i=0;i<n;i++) {
+			sg[n+i] = arr[i];
 		}
-		
-		return (2*multi);
+		for (int i=n-1;i>=0;i--) {
+			sg[i]=Math.min(sg[2*i], sg[2*i+1]);
+		}
+		return;
 	}
-	
-	int buidMinSegmentTree(int[] arr, int lo, int hi, int index) {
-		     // If there is one element in array, store it in current node of 
-		     // segment tree and return 
-		     if (lo == hi) { 
-		         sg[index] = arr[lo]; 
-		         return arr[lo]; 
-		     } 
-
-		     // If there are more than one elements, then recur for left and 
-		     // right subtrees and store the sum of values in this node 
-		     int mid = getMid(lo, hi); 
-		     sg[index] = Math.min(buidMinSegmentTree(arr, lo, mid, index * 2 + 1), 
-		    		 buidMinSegmentTree(arr, mid + 1, hi, index * 2 + 2)); 
-		     return sg[index]; 
-	}
-	
-	 int getMid(int s, int e) { 
-	     return s + (e - s) / 2; 
-	 } 
 	
 }
