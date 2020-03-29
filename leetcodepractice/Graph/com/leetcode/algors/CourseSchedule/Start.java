@@ -1,6 +1,8 @@
 package com.leetcode.algors.CourseSchedule;
 //https://leetcode.com/problems/course-schedule/
 
+import com.leetcode.contests.weekly182.problem1.Solution;
+
 public class Start {
 
 	public static void main(String[] args) {

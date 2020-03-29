@@ -19,6 +19,7 @@
 	<classpathentry kind="src" path="Graph"/>
 	<classpathentry kind="src" path="SegmentTree"/>
 	<classpathentry kind="src" path="Trie"/>
+	<classpathentry kind="src" path="Contests"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
