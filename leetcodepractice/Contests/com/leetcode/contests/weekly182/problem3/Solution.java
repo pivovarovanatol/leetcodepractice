@@ -1,5 +1,6 @@
 package com.leetcode.contests.weekly182.problem3;
 
+import java.util.HashMap;
 
 class UndergroundSystem {
     // String = Stations1|Stations2, Integer[0] = sum of times, Integer[1] = count trips

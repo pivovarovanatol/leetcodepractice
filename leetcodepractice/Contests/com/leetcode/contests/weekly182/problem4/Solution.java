@@ -1,4 +1,5 @@
 package com.leetcode.contests.weekly182.problem4;
+// https://leetcode.com/contest/weekly-contest-182/problems/find-all-good-strings/
 
 import java.util.Arrays;
 
