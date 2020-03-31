@@ -19,19 +19,15 @@ public class Start {
 		
 		Solution sl = new Solution();
 		List<Boolean> actual = sl.canMakePaliQueries(s, queries);
-		List<Boolean> actual1 = sl.canMakePaliQueries3(s, queries);
+		//List<Boolean> actual1 = sl.canMakePaliQueries4(s, queries);
 		
 		for (boolean str : actual) {
 			System.out.print(str + ", ");
 		}
-		
-		System.out.println("============================");
-		
-
-		
-		for (boolean str : actual1) {
-			System.out.print(str + ", ");
-		}
+		//System.out.println("============================");
+		//for (boolean str : actual1) {
+		//	System.out.print(str + ", ");
+		//}
 				
 	}
 
